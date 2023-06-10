@@ -10,7 +10,7 @@ export const Container = styled.aside<ContainerProps>`
   ${({ isMenuOpen }) => {
     return isMenuOpen ? css`width: 16.3rem;` : css`width: 7.75rem;`
   }}
-  /* width: 7.75rem; */
+
 
   padding: 2rem 0;
   overflow: hidden;
@@ -67,9 +67,9 @@ export const Container = styled.aside<ContainerProps>`
             content: '';
             position: absolute;
             left: 0;
-            top: 50%;
+            top:50%;
             bottom: 0;
-            transform: translateY()(-50%);
+            transform: translateY(-50%);
 
             background-color: ${({theme}) => theme.colors.yellow};
             width: 5px;

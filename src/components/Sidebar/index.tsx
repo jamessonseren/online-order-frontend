@@ -1,5 +1,6 @@
 import { Container } from "./styles"
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 import { ReactComponent as BurgerIcon} from '../../assets/burger.svg'
 import { ReactComponent as PizzaIcon} from '../../assets/pizza.svg'
@@ -23,30 +24,30 @@ export function SideBar(){
     <nav>
       <ul>
         <li>
-          <a href="#">
+          <NavLink to="/">
             <BurgerIcon />
             <span>Hamburgers</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="/pizzas">
             <PizzaIcon />
             <span>Pizza</span>
 
-          </a>
+          </NavLink>
 
         </li>
         <li>
-          <a href="#">
+          <NavLink to="/drinks">
             <SodaPopIcon />
-            <span>Soda</span>
-          </a>
+            <span>Drinks</span>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="/desserts">
             <IceCreamIcon />
             <span>Desserts</span>
-          </a>
+          </NavLink>
         </li>
 
       </ul>
