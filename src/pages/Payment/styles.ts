@@ -11,6 +11,10 @@ export const Inner = styled.main`
   background: ${({ theme }) => theme.colors.black};
   padding: 2rem 2.5rem;
   border-radius: 8px;
+
+.error{
+  color: #FF0000;
+}
 `
 
 export const Form = styled.form`

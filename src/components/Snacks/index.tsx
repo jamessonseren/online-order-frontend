@@ -31,7 +31,7 @@ export function Snacks({ snacks }: SnacksProps){
          <img src={snack.image} alt={snack.name}/>
          <p>{snack.description}</p>
          <div>
-          <strong>{snack.price}</strong>
+          <strong>U$ {snack.price}</strong>
           <button type="button" onClick={() => addSnackIntoCart(snack)}><FiPlus /></button>
          </div>
         </div>

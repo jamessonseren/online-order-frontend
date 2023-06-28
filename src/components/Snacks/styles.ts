@@ -85,7 +85,7 @@ export const Container = styled.div`
         }
 
         &:hover {
-          background: ${darken(0.1, '#AA2424')};
+          background: ${({ theme }) => darken(0.1, theme.colors.yellow)};
         }
       }
 

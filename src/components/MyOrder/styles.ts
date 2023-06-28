@@ -17,7 +17,7 @@ export const Container = styled(Link)`
   transition: background 0.3s;
 
   &:hover {
-     background: ${darken(0.1, '#AA2424')};
+    background: ${({ theme }) => darken(0.1, theme.colors.yellow)};
   }
 
   span:first-child {
