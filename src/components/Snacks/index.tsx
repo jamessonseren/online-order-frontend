@@ -20,7 +20,7 @@ export function Snacks({ snacks }: SnacksProps){
       {!snacks.length
       ? [1, 2, 3, 4].map((n) => <SkeletonSnacks key={n}/> )
 
-      : snacks.map((snack) => {
+      : snacks?.map((snack) => {
         const snackExists = cart.find(
           (item) => item.snack === snack.snack && item.id === snack.id
         )
