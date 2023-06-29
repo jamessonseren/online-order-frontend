@@ -15,6 +15,10 @@ export function Snacks({ snacks }: SnacksProps){
 
   const {cart, addSnackIntoCart} = useCart()
 
+  if (!Array.isArray(snacks)) {
+    return <div>Data not received</div>;
+  }
+
   return (
     <Container>
       {!snacks.length
