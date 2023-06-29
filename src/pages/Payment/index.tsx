@@ -34,14 +34,14 @@ export default function Payment() {
           <h4>Personal Information</h4>
 
           <div className='field'>
-            <label htmlFor='fullName'>Name and Surname</label>
+            <label htmlFor='fullName'>Name and Surname *</label>
 
             <Controller
               name='fullName'
               control={control}
               defaultValue=""
               render={({field}) => (
-                <input type='text' id='fullName' autoComplete="name" {...field } />
+                <input type='text' id='fullName' autoComplete="name" onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
               )}
             />
 
@@ -49,14 +49,14 @@ export default function Payment() {
           </div>
           <div className='grouped'>
             <div className='field'>
-              <label htmlFor='email'>E-mail</label>
+              <label htmlFor='email'>E-mail *</label>
 
               <Controller
               name='email'
               control={control}
               defaultValue=""
               render={({field}) => (
-                <input type='email' id='email' autoComplete="email" {...field } />
+                <input type='email' id='email' autoComplete="email" onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
               )}
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
@@ -64,7 +64,7 @@ export default function Payment() {
             </div>
 
             <div className='field'>
-              <label htmlFor='phone'>Phone Number</label>
+              <label htmlFor='phone'>Phone Number *</label>
               <Controller
               name='phone'
               control={control}
@@ -75,8 +75,8 @@ export default function Payment() {
                   id='phone'
                   autoComplete='phone'
                   mask={'(00) 90000-0000'}
-                  {...field}
-                  // onChange={field.onChange} onBlur={field.onBlur} value={field.value}
+
+                  onChange={field.onChange} onBlur={field.onBlur} value={field.value}
                 />
                 )}
             />
@@ -85,7 +85,7 @@ export default function Payment() {
             </div>
 
             <div className='field'>
-              <label htmlFor='document'> CPF / CNPJ</label>
+              <label htmlFor='document'> CPF / CNPJ *</label>
               <Controller
               name='document'
               control={control}
@@ -98,7 +98,7 @@ export default function Payment() {
                     {mask: '000.000.000-00', maxLength: 11},
                     {mask: '00.000.000/0000-00'}
                   ]}
-                  {...field }
+                  onChange={field.onChange} onBlur={field.onBlur} value={field.value}
                 />
                 )}
             />
@@ -108,7 +108,7 @@ export default function Payment() {
           <h4>Delivery Address</h4>
 
           <div className='field'>
-            <label htmlFor='zipCode'>Zip Code</label>
+            <label htmlFor='zipCode'>Zip Code *</label>
             <Controller
               name='zipCode'
               control={control}
@@ -118,7 +118,7 @@ export default function Payment() {
                   id='zipCode'
                   style={{ width: '120px'}}
                   mask={'00000-000'}
-                  {...field}
+                  onChange={field.onChange} onBlur={field.onBlur} value={field.value}
                 />
                 )}
             />
@@ -126,13 +126,13 @@ export default function Payment() {
           </div>
 
           <div className='field'>
-            <label htmlFor='street'>Street</label>
+            <label htmlFor='street'>Street *</label>
             <Controller
               name='street'
               control={control}
               defaultValue=""
               render={({field}) => (
-                <input type='text' id='street'  {...field } />
+                <input type='text' id='street'  onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
 
                 )}
             />
@@ -141,13 +141,13 @@ export default function Payment() {
 
           <div className='grouped'>
             <div className='field'>
-              <label htmlFor='number'>Number</label>
+              <label htmlFor='number'>Number *</label>
               <Controller
                 name='number'
                 control={control}
                 defaultValue=""
                 render={({field}) => (
-                  <input type='text' id='number' {...field } />
+                  <input type='text' id='number' onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
 
                 )}
             />
@@ -161,7 +161,7 @@ export default function Payment() {
                 control={control}
                 defaultValue=""
                 render={({field}) => (
-                  <input type='text' id='complement' {...field } />
+                  <input type='text' id='complement' onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
 
                 )}
             />
@@ -171,13 +171,13 @@ export default function Payment() {
 
           <div className='grouped'>
             <div className='field'>
-              <label htmlFor='neighborhood'>Neighborhood</label>
+              <label htmlFor='neighborhood'>Neighborhood *</label>
               <Controller
                 name='neighborhood'
                 control={control}
                 defaultValue=""
                 render={({field}) => (
-                  <input type='text' id='neighborhood' {...field } />
+                  <input type='text' id='neighborhood' onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
 
                 )}
             />
@@ -185,13 +185,13 @@ export default function Payment() {
             </div>
 
             <div className='field'>
-              <label htmlFor='city'>City</label>
+              <label htmlFor='city'>City *</label>
               <Controller
                 name='city'
                 control={control}
                 defaultValue=""
                 render={({field}) => (
-                  <input type='text' id='city' {...field } />
+                  <input type='text' id='city' onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
 
                 )}
             />
@@ -199,13 +199,13 @@ export default function Payment() {
             </div>
 
             <div className='field'>
-              <label htmlFor='state'>State</label>
+              <label htmlFor='state'>State *</label>
               <Controller
                 name='state'
                 control={control}
                 defaultValue="AC"
                 render={({ field }) => (
-                  <select id='state' {...field }>
+                  <select id='state' onChange={field.onChange} onBlur={field.onBlur} value={field.value}>
                     <option value=''>Selecione</option>
                     <option value='AC'>Acre</option>
                     <option value='AL'>Alagoas</option>
@@ -244,7 +244,7 @@ export default function Payment() {
           <h4>Payment</h4>
 
           <div className='field'>
-            <label htmlFor='creditCard'>Credit card number</label>
+            <label htmlFor='creditCard'>Credit card number *</label>
             <Controller
               name='creditCard'
               control={control}
@@ -267,20 +267,20 @@ export default function Payment() {
                     }
 
                   ]}
-                  {...field }
+                  onChange={field.onChange} onBlur={field.onBlur} value={field.value}
                 />
                 )}
             />
               {errors.creditCard && <p className="error">{errors.creditCard.message}</p>}
           </div>
           <div className='field'>
-            <label htmlFor='creditCardHolder'>Card holder name</label>
+            <label htmlFor='creditCardHolder'>Card holder name *</label>
             <Controller
                 name='creditCardHolder'
                 control={control}
                 defaultValue=""
                 render={({field}) => (
-                  <input type='text' id='creditCardHolder' {...field } />
+                  <input type='text' id='creditCardHolder' onChange={field.onChange} onBlur={field.onBlur} value={field.value} />
 
                 )}
             />
@@ -289,7 +289,7 @@ export default function Payment() {
 
           <div className='grouped'>
             <div className='field'>
-              <label htmlFor='creditCardExpiration'>Expiry Date (MM/YY)</label>
+              <label htmlFor='creditCardExpiration'>Expiry Date (MM/YY) *</label>
               <Controller
               name='creditCardExpiration'
               control={control}
@@ -315,7 +315,7 @@ export default function Payment() {
                       },
                     },
                   ]}
-                  {...field }
+                  onChange={field.onChange} onBlur={field.onBlur} value={field.value}
                 />
                 )}
             />
@@ -323,7 +323,7 @@ export default function Payment() {
             </div>
 
             <div className='field'>
-              <label htmlFor='creditCardSecurityCode'>CVV</label>
+              <label htmlFor='creditCardSecurityCode'>CVV *</label>
               <Controller
               name='creditCardSecurityCode'
               control={control}
@@ -333,7 +333,7 @@ export default function Payment() {
                   type='text'
                   id='creditCardSecurityCode'
                   mask={'0000'}
-                  {...field }
+                  onChange={field.onChange} onBlur={field.onBlur} value={field.value}
                 />
                 )}
             />
